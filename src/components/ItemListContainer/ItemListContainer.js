@@ -7,7 +7,7 @@ function ItemListContainer( { subtitle } ) {
         <h1>
             {subtitle}
         </h1>
-        <ItemCount stock={10} initial={0} outOfStock={0} />
+        <ItemCount stock={10} initial={0} outOfStock={0} onAdd={ items => alert(`${items} Item(s) agregado(s) al Carrito`) } />
     </>
     );
 }
