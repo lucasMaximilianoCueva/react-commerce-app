@@ -1,4 +1,5 @@
 import React from 'react';
+import './BannerTitle.scss'
 
 function BannerTitle( { title } ) {
     return ( <>
