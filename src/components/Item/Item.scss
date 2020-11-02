@@ -1,0 +1,10 @@
+.item-container {
+    display: flex;
+    width: 200px;
+    height: 100px;
+    margin: 2% 2% 0 2%;
+    img {
+        width: 50px;
+        object-fit: contain;
+    }
+}

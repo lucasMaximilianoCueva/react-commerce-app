@@ -5,7 +5,7 @@ function Home() {
     return  <> 
         <div>
             <ItemListContainer
-            subtitle="Products"
+            subtitle="Productos"
             />
         </div>
     </>
