@@ -21,7 +21,7 @@ function ItemDetailContainer () {
                 setItem(res);
             }
         )
-    }, );
+    }, [id]);
 
     return ( <>
         

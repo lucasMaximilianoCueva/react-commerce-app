@@ -1,14 +1,17 @@
 import React from 'react';
 import './NavBar.scss';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return <header>
     <nav>
         <ul>
-            <li><a href="home">Farmacéutica de sur</a></li>
             <li>
-                <CartWidget />
+                <Link to="/">Farmacéutica del sur</Link>
+            </li>
+            <li>
+                <Link to="/cart"><CartWidget /></Link>
             </li>
         </ul>
 
