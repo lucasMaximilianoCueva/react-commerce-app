@@ -20,7 +20,6 @@ function ItemCount( { stock, outOfStock, initial, onAdd } ) {
 
     return <>
         <div>
-            <p>Cepillo de dientes</p>
             <div>
                 <button onClick={decrement}>-</button>
                 <span> { count } </span>

@@ -1,7 +1,6 @@
 import React from 'react';
 import './NavBar.scss';
 import CartWidget from '../CartWidget/CartWidget';
-import BannerTitle from '../BannerTitle/BannerTitle';
 
 function NavBar() {
     return <header>
@@ -14,14 +13,6 @@ function NavBar() {
         </ul>
 
     </nav>
-    
-        <div className="header-title">
-            <BannerTitle
-            title="Banner Title"
-            />
-        </div>
-
-
 </header>
 
 }

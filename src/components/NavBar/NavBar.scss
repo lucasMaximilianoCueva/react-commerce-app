@@ -1,6 +1,5 @@
 header {
-    height: 50vh;
-    background-color: aquamarine;
+    min-height: 8vh;
   }
   
   nav ul {
@@ -21,7 +20,7 @@ header {
     padding: 20px 0%;
     -webkit-transition: all 0.9s ease;
     transition: all 0.9s ease;
-    background-color: white;
+    background-color: rgb(209, 209, 209);
     padding: 0 5% 0 5%;
     a {
       color: black;
@@ -49,10 +48,3 @@ header {
     }
   }
  
-  .header-title {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
