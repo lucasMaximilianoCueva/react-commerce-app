@@ -4,7 +4,7 @@ import './Cart.scss';
 function Cart () { 
     return (
         <div>
-            <p>Carrito Vacío</p>
+            <p>Carrito</p>
         </div>
     )
  }
