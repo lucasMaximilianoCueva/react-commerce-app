@@ -10,11 +10,13 @@ export default function CartProvider({ defaultCart = [], children }) {
     const [cart, setCart] = useState(defaultCart);
     const [quantity, setQuantity] = useState();
 
-    function addItem(item, quantity) {
+    function addItem(item, quantity, killerButton) {
         const addedItems = [...cart, item];
         setCart(addedItems);
-        setQuantity(quantity);
-        console.log(quantity)
+        if (quantity > 0 ) {
+            setQuantity(quantity);
+            killerButton();
+        }
     }
 
     function removeItem(itemId) {
