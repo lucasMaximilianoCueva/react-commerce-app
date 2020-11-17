@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function ItemCount( { stock, outOfStock, initial, addItem, item, killerButton } ) { 
 
-    const [quantity, setCount] = useState(initial);
+    const [quantity, setCount ] = useState(initial);
     
     function increment() { 
         if (quantity < stock) {
@@ -17,7 +17,7 @@ function ItemCount( { stock, outOfStock, initial, addItem, item, killerButton } 
             setCount( quantity - 1 );
          }
      }
-
+     
     return <>
         <div>
             <div>
@@ -25,7 +25,7 @@ function ItemCount( { stock, outOfStock, initial, addItem, item, killerButton } 
                 <span> { quantity } </span>
                 <button onClick={increment}>+</button>
             </div>
-            <button onClick={() => addItem(item, quantity, killerButton)} disabled={ stock <= outOfStock || quantity <= outOfStock }>Agregar al carrito</button>
+            <button onClick={() => addItem(item, quantity, killerButton)} disabled={ stock <= outOfStock || quantity <= outOfStock  }>Agregar al carrito</button>
         </div>
     </>
  }

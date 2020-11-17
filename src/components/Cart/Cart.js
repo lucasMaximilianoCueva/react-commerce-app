@@ -4,9 +4,9 @@ import './Cart.scss';
 
 function Cart () { 
 
-    const { cart, removeItem, clear, quantity } = useCartContext();
+    const { cart, removeItem, clear } = useCartContext();
 
-    console.log(quantity);
+    console.log('cart section', cart);
 
     return (
         <div>
@@ -23,7 +23,6 @@ function Cart () {
                         </button>
                     </li>
                 ))}
-                <li>{quantity}</li>
             </ul>
         </div>
     )
