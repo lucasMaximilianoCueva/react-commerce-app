@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useCartContext } from '../../context/cartContext';
 import CartWidget from '../CartWidget/CartWidget';
 import Burger from './Burger';
 
@@ -23,14 +24,17 @@ const Nav = styled.nav`
 `
 
 const Navbar = () => {
+  const { quantity } = useCartContext();
+  
   return (
     <header style={{ height: 60 }}>
     <Nav>
       <div className="logo">
-        <Link to="/">Farmacia</Link>
+  <Link to="/">Farmacia</Link>
       </div>
       <div className="cart">
         <Link to="/cart"><CartWidget /></Link>
+          <span>{quantity}</span>
       </div>
       <Burger />
     </Nav>

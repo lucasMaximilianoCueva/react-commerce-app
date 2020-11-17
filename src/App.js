@@ -5,10 +5,12 @@ import Home from './components/Home/Home';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import Navbar from './components/Nav/Navbar';
+import CartProvider from './context/cartContext';
 
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
         <Navbar />
         <Switch>
@@ -23,6 +25,7 @@ function App() {
           </Route>
         </Switch>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 
