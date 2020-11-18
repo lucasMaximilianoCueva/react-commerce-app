@@ -8,7 +8,7 @@ function Home() {
         <div>
         <div className="header-title">
             <BannerTitle
-            title="Banner Title"
+            title="Farmacéutica Del Sur"
             />
         </div>
             <ItemListContainer

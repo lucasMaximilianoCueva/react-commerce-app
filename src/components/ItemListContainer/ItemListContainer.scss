@@ -1,0 +1,17 @@
+.item-list-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+}
+
+.items-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 500px;
+}

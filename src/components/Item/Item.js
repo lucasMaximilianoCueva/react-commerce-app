@@ -6,13 +6,15 @@ import './Item.scss';
 
 function Item ( { item: { id, name, price, img} } ) {  
     return (
-    <div className="item-container">
-                <p>{name}</p>
+        <Link style={{textDecoration: "none"}} to={`/item/${id}`}>
+            <div className="item-container">
+                <div>
+                    <img src={img} alt="pharmacy" />
+                </div>
+                <h4>{name}</h4>
                 <p>${price}</p>
-                <Link to={`/item/${id}`}><img src={img} alt="pharmacy" /></Link>
             </div>
-         
-    )
-         }
+        </Link>
+    )}
 
 export default Item;

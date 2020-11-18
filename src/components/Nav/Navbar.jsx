@@ -30,7 +30,7 @@ const Navbar = () => {
     <header style={{ height: 60 }}>
     <Nav>
       <div className="logo">
-  <Link to="/">Farmacia</Link>
+  <Link to="/"><img style={{ width: 30 }} src="../../../cross.png" alt="farmaceutica del sur" /></Link>
       </div>
       <div className="cart">
         <Link to="/cart"><CartWidget /></Link>

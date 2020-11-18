@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ItemCount.scss';
 
 function ItemCount( { stock, outOfStock, initial, addItem, item, killerButton } ) { 
 
@@ -19,14 +20,16 @@ function ItemCount( { stock, outOfStock, initial, addItem, item, killerButton } 
      }
      
     return <>
-        <div>
-            <div>
-                <button onClick={decrement}>-</button>
-                <span> { quantity } </span>
-                <button onClick={increment}>+</button>
+            <div className="counter">
+                <button className="btn btn--skew btn-default" onClick={decrement}>-</button>
+                <span className="count"> { quantity } </span>
+                <button className="btn btn--skew btn-default" onClick={increment}>+</button>
             </div>
-            <button onClick={() => addItem(item, quantity, killerButton)} disabled={ stock <= outOfStock || quantity <= outOfStock  }>Agregar al carrito</button>
-        </div>
+            <div className="add-button">
+                <button className="btn btn--skew btn-default" onClick={() => addItem(item, quantity, killerButton)} disabled={ stock <= outOfStock || quantity <= outOfStock  }>
+                    <span>Agregar</span>
+                </button>
+            </div>
     </>
  }
 

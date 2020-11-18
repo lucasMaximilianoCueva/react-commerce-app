@@ -64,10 +64,10 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
       <li>
-         <Link to="/" className="nav-link">Home</Link>
+         <Link to="/" className="nav-link">Página Principal</Link>
       </li>
       <li>
-          <Link to="/cart" className="nav-link">List</Link>
+          <Link to="/cart" className="nav-link">Carrito</Link>
       </li>
     </Ul>
   )
