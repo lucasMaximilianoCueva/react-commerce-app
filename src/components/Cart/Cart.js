@@ -4,28 +4,48 @@ import './Cart.scss';
 
 function Cart () { 
 
-    const { cart, removeItem, clear } = useCartContext();
-
-    console.log('cart section', cart);
+    const { cart, removeItem, quantity } = useCartContext();
 
     return (
         <div>
-            <p>Carrito</p>
-            <ul>
-                {cart.map(item => (
-                    <li key={item}>
-                        {item.name} -{" "}
-                        <button key={item} onClick={() => removeItem(item.id)}>
+            <div className="cart-title">
+                <h1>Carrito de Compras</h1>
+                <h1>{quantity} Items</h1>
+            </div>
+
+            <div className="cart-detail-bar">
+                <p>Detalle de Producto</p>
+                <p>Cantidad</p>
+                <p>Precio</p>
+            </div>
+            {cart.map(item => (
+                <div key={item} className="cart-container">
+                    <div className="item-detail">
+                    <div className="product-img">
+                        <img key={item} src={item.img} alt="pharmacy" />
+                    </div>
+                    <div className="product-detail">
+                        <h4>{item.name}</h4>
+                        <p>{item.description} DETALLES</p>
+                        <button className="btn btn--skew btn-default" key={item} onClick={() => removeItem(item.id)}>
                             borrar
                         </button>
-                        <button onClick={() => clear()}>
-                            borrar todo
-                        </button>
-                    </li>
-                ))}
-            </ul>
+                    </div>
+                    </div>
+                    <div className="product-quantity">
+                        <p>QUANTITY</p>
+                    </div>
+                    <div className="product-price">
+                        <p>${item.price}</p>
+                    </div>
+                </div>
+            ))}
         </div>
-    )
- }
+)}
 
  export default Cart;
+
+ //<button onClick={() => clear()}>
+   //                     borrar todo
+     //                 </button>
+

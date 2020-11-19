@@ -31,7 +31,7 @@ function ItemDetail ( { item } ) {
             <p>${item.price}</p>
           </div>
           <div className="detail-buttons">
-            {!killer && <ItemCount stock={10} initial={0} outOfStock={0} addItem={ addItem } item={item} killerButton={killerButton} />}
+            { <ItemCount stock={10} initial={0} outOfStock={0} addItem={ addItem } killer={killer} item={item} killerButton={killerButton} />}
             {killer && <button className="btn btn--skew btn-default"><Link style={{textDecoration: "none"}} to="/cart">Terminar Compra</Link></button>}
             </div> 
             </div> 
