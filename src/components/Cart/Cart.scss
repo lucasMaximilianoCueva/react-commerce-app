@@ -45,6 +45,12 @@
     h1 {
         padding: 3% 6% 0 6%;
     }
+    div {
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        padding: 3% 0 0 0;
+    }
 }
 
 .cart-detail-bar {
@@ -97,5 +103,21 @@
     p {
         margin-top: 25px;
         font-weight: bold;
+    }
+}
+
+.empty-cart-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 0 0 0;
+    h1 {
+        margin-bottom: 40px;
+    }
+    h3 {
+        a {
+            color: navy;
+        }
     }
 }

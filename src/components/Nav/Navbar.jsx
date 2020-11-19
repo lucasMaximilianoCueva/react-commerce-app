@@ -24,7 +24,7 @@ const Nav = styled.nav`
 `
 
 const Navbar = () => {
-  const { quantity } = useCartContext();
+  const { cart, quantity } = useCartContext();
   
   return (
     <header style={{ height: 60 }}>
@@ -32,10 +32,10 @@ const Navbar = () => {
       <div className="logo">
   <Link to="/"><img style={{ width: 30 }} src="../../../cross.png" alt="farmaceutica del sur" /></Link>
       </div>
-      <div className="cart">
-        <Link to="/cart"><CartWidget /></Link>
-          <span>{quantity}</span>
-      </div>
+      {quantity &&<div className="cart">
+  <Link to="/cart"><CartWidget /></Link>
+          <span>{cart.length}</span>
+      </div>}
       <Burger />
     </Nav>
     </header>

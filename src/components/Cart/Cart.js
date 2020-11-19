@@ -1,16 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCartContext } from '../../context/cartContext';
 import './Cart.scss';
 
 function Cart () { 
 
-    const { cart, removeItem, quantity } = useCartContext();
+    const { cart, removeItem, quantity, clear } = useCartContext();
 
     return (
         <div>
             <div className="cart-title">
                 <h1>Carrito de Compras</h1>
-                <h1>{quantity} Items</h1>
+                <div>
+                    <h1>{cart.length} Items</h1>
+                    <button onClick={() => clear()}>X</button>
+                </div>
+                
             </div>
 
             <div className="cart-detail-bar">
@@ -18,6 +23,10 @@ function Cart () {
                 <p>Cantidad</p>
                 <p>Precio</p>
             </div>
+            {!quantity && <div className="empty-cart-message">
+                <h1>No Hay Productos Agregados</h1>
+                <h3><Link to="/" style={{textDecoration: "none"}}>Volver a la Página Principal</Link></h3>
+            </div>}
             {cart.map(item => (
                 <div key={item.id} className="cart-container">
                     <div className="item-detail">
@@ -36,10 +45,11 @@ function Cart () {
                         <p>{quantity}</p>
                     </div>
                     <div className="product-price">
-                        <p>${item.price}</p>
+                        <p>${item.price * quantity}</p>
                     </div>
                 </div>
             ))}
+            <p>{cart.price}</p>
         </div>
 )}
 

@@ -16,7 +16,7 @@ export default function CartProvider({ defaultCart = [], children }) {
             setQuantity(quantity);
             killerButton();
         }
-        if (!cart.find(items => items.id === item.id) && item.id ) {
+        if (!cart.find(items => items.id === item.id) && item.id) {
             setCart(addedItems);
         } else {
             console.log(`'${item.id}' not added`);
