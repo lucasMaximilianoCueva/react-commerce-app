@@ -12,10 +12,15 @@ export default function CartProvider({ defaultCart = [], children }) {
 
     function addItem(item, quantity, killerButton) {
         const addedItems = [...cart, item];
-        setCart(addedItems);
         if (quantity > 0 ) {
             setQuantity(quantity);
             killerButton();
+        }
+        if (!cart.find(items => items.id === item.id) && item.id ) {
+            setCart(addedItems);
+        } else {
+            console.log(`'${item.id}' not added`);
+            setQuantity(quantity + 1);
         }
     }
 
