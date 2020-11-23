@@ -30,7 +30,7 @@ const Navbar = () => {
     <header style={{ height: 60 }}>
     <Nav>
       <div className="logo">
-  <Link to="/"><img style={{ width: 30 }} src="../../../cross.png" alt="farmaceutica del sur" /></Link>
+  <Link to="/"><img style={{ width: 30 }} src="../../../cross.png" alt="cloud pharma" /></Link>
       </div>
       {quantity &&<div className="cart">
   <Link to="/cart"><CartWidget /></Link>

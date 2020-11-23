@@ -3,7 +3,7 @@ import './BannerTitle.scss'
 
 function BannerTitle( { title } ) {
     return ( <>
-        <h1>
+        <h1 className="banner-title">
             {title}
         </h1>
     </>

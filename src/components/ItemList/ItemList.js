@@ -4,7 +4,14 @@ import Item from '../Item/Item';
 
 function ItemList ( { items } ) {
     return ( <>
-            {items.map(item => <Item key={item.id} item={item} />)}
+          <ul className="grid">
+          {items.map(item => 
+          <li key={item.id} className="column">
+            <Item  item={item} />
+          </li>)}
+          
+          </ul>
+            
     </>
             
     )

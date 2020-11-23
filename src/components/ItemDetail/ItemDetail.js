@@ -19,16 +19,16 @@ function ItemDetail ( { item } ) {
         <div className="item-detail-container">
           <div className="detail-img">
             <div>
-              <img src={item.img} alt='pharmacy' />
+              <img src={item.imageId} alt='pharmacy' />
             </div>
           </div>
           <div className="detail">
             <div className="title">
-              <h4>{item.name}</h4>
-              <p>{item.description} DETALLES</p>
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
             </div>
           <div className="detail-price">
-            <p>${item.price}</p>
+            <p><strike>${item.previousPrice}</strike> ${item.price}</p>
           </div>
           <div className="detail-buttons">
             { <ItemCount stock={10} initial={0} outOfStock={0} addItem={ addItem } killer={killer} item={item} killerButton={killerButton} />}

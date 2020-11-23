@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
-    height: 300px;
-    margin: 2% 2% 0 2%;
+    width: 240px;
+    height: 290px;
     transition: all 0.3s ease 0s;
     border: rgba(192, 192, 192, 0) 1px solid;
     border-radius: 10px;
+    margin: 10px 10px 10px 10px;
     div {
         display: flex;
         width: 150px;
@@ -16,6 +16,7 @@
         img {
             width: 100%;
             object-fit: contain;
+            max-height: 180px;
         }
     }
     h4 {
@@ -24,6 +25,11 @@
     p {
         color: rgb(212, 67, 67);
         margin-top: 20px;
+        font-size: 1.2rem;
+        strike {
+            color: #303030;
+            font-size: 1rem;
+        }
     }
     &:hover {
         border: rgba(192, 192, 192, 1) 1px solid;

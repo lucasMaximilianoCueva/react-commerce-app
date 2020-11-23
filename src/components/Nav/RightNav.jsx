@@ -1,6 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
+const staticCategories = [
+  { id: 'cuidado de la salud', name: 'Cuidado De La Salud' },
+  { id: 'cuidado personal', name: 'Cuidado Personal' },
+  { id: 'oferta', name: 'Ofertas' }
+];
 
 const Ul = styled.ul`
   list-style: none;
@@ -69,6 +75,10 @@ const RightNav = ({ open }) => {
       <li>
           <Link to="/cart" className="nav-link">Carrito</Link>
       </li>
+      {staticCategories.map(cat =>
+        <li key={cat.id}>
+          <NavLink to={`/category/${cat.id}`} style={{textDecoration: "none"}} className="nav-link">{cat.name}</NavLink>
+        </li>)}
     </Ul>
   )
 }

@@ -4,15 +4,15 @@ import './Item.scss';
 
 
 
-function Item ( { item: { id, name, price, img} } ) {  
+function Item ( { item: { id, title, price, imageId, previousPrice} } ) {  
     return (
         <Link style={{textDecoration: "none"}} to={`/item/${id}`}>
             <div className="item-container">
                 <div>
-                    <img src={img} alt="pharmacy" />
+                    <img src={imageId} alt="pharmacy" />
                 </div>
-                <h4>{name}</h4>
-                <p>${price}</p>
+                <h4>{title}</h4>
+                <p><strike>${previousPrice}</strike> ${price}</p>
             </div>
         </Link>
     )}

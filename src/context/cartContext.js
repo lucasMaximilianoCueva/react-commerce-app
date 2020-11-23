@@ -30,7 +30,10 @@ export default function CartProvider({ defaultCart = [], children }) {
         setQuantity([])
     }
 
-    function clear() {
+    function clear(backButton) {
+        if(quantity === 0) {
+            backButton();
+        }
         setCart([])
         setQuantity([])
     }
