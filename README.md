@@ -28,11 +28,6 @@ Para la navegación entre los distintos componentes de la App utilicé [react-ro
 
 Conectada una colección de firestore con el listado de items y con el detalle del mismo, si navegamos a /item/:id podremos hacer una consulta de un documento en específico, asi como tambien podemos filtrar la lista de items por categoria (:categoryId).<br />Mediante la escritura en firestore podremos insertar una orden dentro de una colección y darle al user su id de orden auto-generada.
 
-
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
 ### `Página Principal`
 
 Se visualiza en la NavBar a la izquierda el logo de la marca, a la derecha el CartWidget solo si contiene almenos 1 item, y un menú desplegable que contiene atajos y categorías. Por debajo el banner con el nombre de la marca y dos clickeables que muestran diferentes productos en la lista.<br />
