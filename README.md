@@ -18,8 +18,12 @@ npm start
 ```
 **Estilos**
 
+<<<<<<< HEAD
 Utilicé el preprocesador [Sass](https://create-react-app.dev/docs/adding-a-sass-stylesheet/) ya que me sentía cómodo con el entorno de trabajo y preferí dar yo los estilos a usar una librería en este caso. En el caso del Nav utilicé [styled-components](https://styled-components.com/). Añadidos también algunas animaciones con css en el RightNav y button. Las imágenes son traidas de internet, por lo que no se visualizarán offline.<br />
 Por el momento no es responsive, pero lo será proximamente.
+=======
+Utilicé el preprocesador [Sass](https://create-react-app.dev/docs/adding-a-sass-stylesheet/) ya que me sentía cómodo con el entorno de trabajo y preferí dar yo los estilos a usar una librería en este caso. En el caso del Nav utilicé [styled-components](https://styled-components.com/). Añadidos también algunas animaciones con css en el RightNav y button. Las imágenes son traidas de internet, por lo que no se visualizarán offline.
+>>>>>>> probando-funcionalidad
 
 **Navegación**
 
@@ -52,4 +56,7 @@ Aquí se puede visualizar una lista de los productos añadidos, con su título, 
 
 <br/>
 
+<<<<<<< HEAD
 `Muy divertido el curso PoliCoder`
+=======
+>>>>>>> probando-funcionalidad

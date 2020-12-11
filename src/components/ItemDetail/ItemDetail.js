@@ -1,41 +1,73 @@
-import React, { useState } from 'react';
-import './ItemDetail.scss';
-import ItemCount from '../ItemCount/ItemCount';
-import { Link } from 'react-router-dom';
-import { useCartContext } from '../../context/cartContext';
-import './ItemDetail.scss';
+import React, { useState, useEffect } from "react";
+import "./ItemDetail.scss";
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cartContext";
+import "./ItemDetail.scss";
 
-function ItemDetail ( { item } ) {
+function ItemDetail({ item }) {
+  const [detailData, setDetailData] = useState({});
+  const [addedToCart, setAddedToCart] = useState(false);
+  const [initialCount, setInitialCount] = useState(1);
+  const [stock, setStock] = useState(1);
 
-    const { addItem } = useCartContext();
+  const { cart, addItem } = useCartContext();
 
-    const [killer, setKiller] = useState(false);
+  useEffect(() => {
+    setDetailData(item);
+    setStock(item.stock);
 
-    function killerButton() {
-      setKiller(true);
+    const foundItem = cart.find((el) => el.id === item.id);
+    if (foundItem) {
+      setInitialCount(foundItem.quantity);
     }
+  }, [cart, item]);
 
-    return (
-        <div className="item-detail-container">
-          <div className="detail-img">
-            <div>
-              <img src={item.imageId} alt='pharmacy' />
-            </div>
-          </div>
-          <div className="detail">
-            <div className="title">
-              <h4>{item.title}</h4>
-              <p>{item.description}</p>
-            </div>
-          <div className="detail-price">
-            <p><strike>${item.previousPrice}</strike> ${item.price}</p>
-          </div>
-          <div className="detail-buttons">
-            { <ItemCount stock={10} initial={0} outOfStock={0} addItem={ addItem } killer={killer} item={item} killerButton={killerButton} />}
-            {killer && <button className="btn btn--skew btn-default"><Link style={{textDecoration: "none"}} to="/cart">Terminar Compra</Link></button>}
-            </div> 
-            </div> 
+  function onAdd(quantity) {
+    if (quantity > 0) {
+      setAddedToCart(true);
+    } else {
+      setAddedToCart(false);
+    }
+    addItem(item, quantity);
+  }
+
+  return (
+    <div className="item-detail-container">
+      <div className="detail-img">
+        <div>
+          <img src={detailData.imageId} alt="pharmacy" />
         </div>
-    )}
+      </div>
+      <div className="detail">
+        <div className="title">
+          <h4>{detailData.title}</h4>
+          <p>{detailData.description}</p>
+        </div>
+        <div className="detail-price">
+          <p>
+            <strike>{detailData.previousPrice}</strike> ${detailData.price}
+          </p>
+        </div>
+        <div className="detail-buttons">
+          {addedToCart ? (
+            <button className="btn btn--skew btn-default">
+              <Link style={{ textDecoration: "none" }} to="/cart">
+                Terminar Compra
+              </Link>
+            </button>
+          ) : (
+            <ItemCount
+              id={item.id}
+              stock={stock}
+              initial={initialCount}
+              onAdd={onAdd}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default ItemDetail;

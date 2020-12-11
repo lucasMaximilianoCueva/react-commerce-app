@@ -24,7 +24,12 @@ const Nav = styled.nav`
 `
 
 const Navbar = () => {
-  const { cart, quantity } = useCartContext();
+  const { totalItemCount } = useCartContext();
+
+  const styles = {
+    display: totalItemCount > 0 ? 'block' : 'none'
+}
+
   
   return (
     <header style={{ height: 60 }}>
@@ -32,10 +37,10 @@ const Navbar = () => {
       <div className="logo">
   <Link to="/"><img style={{ width: 30 }} src="../../../cross.png" alt="cloud pharma" /></Link>
       </div>
-      {quantity &&<div className="cart">
+      <div style={styles} className="cart">
   <Link to="/cart"><CartWidget /></Link>
-          <span>{cart.length}</span>
-      </div>}
+          <span>{totalItemCount}</span>
+      </div>
       <Burger />
     </Nav>
     </header>
