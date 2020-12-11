@@ -12,7 +12,7 @@ function Item ( { item: { id, title, price, imageId, previousPrice} } ) {
                     <img src={imageId} alt="pharmacy" />
                 </div>
                 <h4>{title}</h4>
-                <p><strike>${previousPrice}</strike> ${price}</p>
+                <p><strike>{previousPrice}</strike> ${price}</p>
             </div>
         </Link>
     )}

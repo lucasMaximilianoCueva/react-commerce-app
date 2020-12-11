@@ -1,8 +1,11 @@
-.title {
-    display: flex;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 
-  .banner-title {
-    color: cornflowerblue;
+.banner-title {
+  font-size: 3rem;
+  color: cornflowerblue;
+  font-family: "Libre Baskerville", serif;
+  .title {
+    display: flex;
+    justify-content: flex-start;
   }
-  
+}
