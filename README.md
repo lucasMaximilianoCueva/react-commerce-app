@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cloud Pharma - Tienda Farmacéutica
+### `react-commerce-app`
+<br />
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Este Proyecto fué desarrollado en [React](https://es.reactjs.org/) para el Final de curso dictado en [CoderHouse](https://www.coderhouse.com/).  
+#### Actualmente se encuentra en una versión estable, aún así planeo seguir desarrollando algunas features extras
+<br/>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Antes De Iniciar El Proyecto Ejecutar:`
+```
+npm install
+```
+### `Para Inicilizar El Proyecto Ejecutar:`
+```
+npm start
+```
+**Estilos**
+
+Utilicé el preprocesador [Sass](https://create-react-app.dev/docs/adding-a-sass-stylesheet/) ya que me sentía cómodo con el entorno de trabajo y preferí dar yo los estilos a usar una librería en este caso. En el caso del Nav utilicé [styled-components](https://styled-components.com/). Añadidos también algunas animaciones con css en el RightNav y button. Las imágenes son traidas de internet, por lo que no se visualizarán offline.<br />
+Por el momento no es responsive, pero lo será proximamente.
+
+**Navegación**
+
+Para la navegación entre los distintos componentes de la App utilicé [react-router-dom](https://reactrouter.com/web/guides/quick-start), cambia la Url del navegador, modifica el historial y mantiene sincronizado el estado de la interfaz de usuario.
+
+**Firestore**
+
+Conectada una colección de firestore con el listado de items y con el detalle del mismo, si navegamos a /item/:id podremos hacer una consulta de un documento en específico, asi como tambien podemos filtrar la lista de items por categoria (:categoryId).<br />Mediante la escritura en firestore podremos insertar una orden dentro de una colección y darle al user su id de orden auto-generada.
+
+
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `Página Principal`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se visualiza en la NavBar a la izquierda el logo de la marca, a la derecha el CartWidget solo si contiene almenos 1 item, y un menú desplegable que contiene atajos y categorías. Por debajo el banner con el nombre de la marca y dos clickeables que muestran diferentes productos en la lista.<br />
+ItemListContainer muestra una lista de items traidos de la colección de firestore.
 
-### `npm run build`
+### `Detalle Del Producto`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Al clickear en un item en la vista principal nos redireccionara al componente ItemDetailContainer, el cual vuelve a traer los items de firestore pero solo trae al que coincida con el id clickeado anteriormente, en el caso que no coincida muestra un mensaje de error.<br/>
+Podemos seleccionar la cantidad del item que queremos agregar a nuestro cart, en el caso que se supere la cantidad del stock muestra un mensaje de alerta e impide seguir sumando. Clickeamos agregar y a terminar compra, nos lleva al componente Cart.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `Carrito De Compras`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Aquí se puede visualizar una lista de los productos añadidos, con su título, cantidad por item, su precio, cantidad total (visualizada en el CartWidget) y precio total. Hay un boton para eliminar individualmente y otro para vaciar el carrito, a la derecha un breve formulario que luego va a servir para crear una orden y al clickear 'checkout' nos va a devolver el orderId. El carrito se reinicia y podemos volver a repetir el proceso.
 
-### `npm run eject`
+### A Futuro pienso añadirle un auth/login y un carrito que sea persistente con localStorage.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`Muy divertido el curso PoliCoder`
