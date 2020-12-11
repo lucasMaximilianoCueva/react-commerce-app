@@ -25,6 +25,17 @@ export default function CartProvider({ children, defaultCart = [] }) {
     counter(newCart);
   }
 
+  function counter(items) {
+    let countTotal = 0;
+    let costTotal = 0;
+    for (let i = 0; i < items.length; i++) {
+      countTotal += items[i].quantity;
+      costTotal += items[i].price * items[i].quantity;
+    }
+    setTotalItemCount(countTotal);
+    setCartTotal(costTotal);
+  }
+
   function removeItem(itemId) {
     if (cart.length > 0) {
       const newCart = cart.filter((item) => item.id !== itemId);
@@ -37,17 +48,6 @@ export default function CartProvider({ children, defaultCart = [] }) {
     setCart([]);
     setTotalItemCount(0);
     setCartTotal(0);
-  }
-
-  function counter(items) {
-    let countTotal = 0;
-    let costTotal = 0;
-    for (let i = 0; i < items.length; i++) {
-      countTotal += items[i].quantity;
-      costTotal += items[i].price * items[i].quantity;
-    }
-    setTotalItemCount(countTotal);
-    setCartTotal(costTotal);
   }
 
   return (
